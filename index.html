@@ -1,21 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kit & Me — Stateful AI that remembers you, locally.</title>
+    <style>
 
+        /* How It Works */
+        .feature-block {
+            margin-bottom: 4rem;
+        }
 
-    
+        .feature-block h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #F0F2F6;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .feature-item {
+            padding: 1.5rem;
+            border: 1px solid rgba(239, 99, 55, 0.15);
+            border-radius: 8px;
+            background: rgba(239, 99, 55, 0.02);
+            transition: all 0.2s ease;
+        }
+
+        .feature-item:hover {
+            border-color: rgba(239, 99, 55, 0.4);
+            background: rgba(239, 99, 55, 0.05);
+            transform: translateY(-2px);
+        }
+
+        .feature-item h4 {
+            color: #EF6337;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-item p {
+            font-size: 0.95rem;
+            opacity: 0.75;
+        }
+
+        @media (max-width: 768px) {
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #000000;
+            color: #F0F2F6;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(239, 99, 55, 0.08) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .logo {
+            max-width: 320px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 2.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .fox-jump {
+            position: absolute;
+            bottom: 40px;
+            right: 5%;
+            max-width: 180px;
+            width: 100%;
+            height: auto;
+            opacity: 0.85;
+            z-index: 1;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 .accent {
+            color: #EF6337;
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 2vw, 1.5rem);
+            color: #F0F2F6;
+            opacity: 0.8;
+            max-width: 600px;
+            margin-bottom: 2.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn {
+            padding: 0.9rem 2rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background-color: #EF6337;
+            color: #000000;
+        }
+
+        .btn-primary:hover {
+            background-color: #A81B0A;
+            color: #F0F2F6;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(239, 99, 55, 0.3);
+        }
+
+        .tags {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .tag {
+            padding: 0.4rem 1.2rem;
+            border: 1px solid #A81B0A;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #EF6337;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            font-weight: 500;
+            background: rgba(239, 99, 55, 0.05);
+        }
+
+        .section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .section h2 .accent {
+            color: #EF6337;
+        }
+
+        .section-intro {
+            font-size: 1.2rem;
+            opacity: 0.8;
+            max-width: 700px;
+            margin-bottom: 3rem;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .problem-card {
+            padding: 2rem;
+            border-left: 3px solid #EF6337;
+            background: rgba(239, 99, 55, 0.03);
+            transition: all 0.2s ease;
+        }
+
+        .problem-card:hover {
+            background: rgba(239, 99, 55, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .problem-card h3 {
+            color: #EF6337;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .problem-card p {
+            opacity: 0.7;
+        }
+
+        /* Use Cases */
+        .use-cases {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .use-case {
+            padding: 2rem;
+            border: 1px solid rgba(239, 99, 55, 0.2);
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            cursor: pointer;
+        }
+
+        .use-case:hover {
+            border-color: #EF6337;
+            background: rgba(239, 99, 55, 0.05);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .use-case .icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .use-case h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #F0F2F6;
+        }
+
+        .use-case p {
+            font-size: 0.95rem;
+            opacity: 0.7;
+        }
+
+        .use-case .learn-more {
+            margin-top: 1rem;
+            color: #EF6337;
+            font-size: 0.9rem;
+            font-weight: 600;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+
+        .use-case:hover .learn-more {
+            opacity: 1;
+        }
+
+        .privacy {
+            text-align: center;
+            padding: 8rem 2rem;
+            background: linear-gradient(180deg, transparent 0%, rgba(168, 27, 10, 0.05) 100%);
+            position: relative;
+        }
+
+        .privacy h2 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+        }
+
+        .privacy p {
+            font-size: 1.3rem;
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 1.5rem auto;
+        }
+
+        .privacy .promise {
+            font-size: 1.5rem;
+            color: #EF6337;
+            font-weight: 600;
+            margin-top: 2rem;
+        }
+
+        .fox-sit {
+            max-width: 200px;
+            width: 100%;
+            height: auto;
+            margin: 2rem auto;
+            opacity: 0.9;
+        }
+
+        footer {
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(239, 99, 55, 0.1);
+        }
+
+        footer p {
+            opacity: 0.5;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #EF6337;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #A81B0A;
+        }
+
+        .footer-logo {
+            max-width: 120px;
+            width: 100%;
+            height: auto;
+            margin-bottom: 1rem;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                padding: 4rem 1.5rem;
+            }
+            .fox-jump {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero -->
     <section class="hero">
+        <img src="logo_dark.png" alt="Kit & Me" class="logo">
+        
         <h1>Your AI shouldn't<br>have a <span class="accent">cloud.</span></h1>
-        <p>Stateful AI that remembers you — across days, weeks, conversations. Everything local. Everything yours.</p>
+        <p>Stateful AI that remembers you — across days, weeks, conversations. Everything local. Everything yours. No data leaves your machine.</p>
         <div class="cta-group">
             <a href="#use-cases" class="btn btn-primary">See what it does</a>
-            <a href="#" class="btn btn-secondary">Get the code</a>
         </div>
         <div class="tags">
-            <span class="tag">Kind</span>
-            <span class="tag">Intelligent</span>
-            <span class="tag">Technology</span>
+            <span class="tag">PARTNERS THAT REMEMBER</span>
+            <span class="tag">100% LOCAL</span>
+            <span class="tag">NO CLOUD</span>
         </div>
+        
+        <img src="fox_transparent.png" alt="" class="fox-jump">
     </section>
 
-    
+    <!-- Problem -->
     <section class="section">
         <h2>Every AI <span class="accent">forgets</span> you.</h2>
         <p class="section-intro">You talk, they respond, they forget. Every conversation starts from zero. Your data lives on someone else's server. This is the fundamental limitation of every chatbot, assistant, and "AI companion" on the market.</p>
@@ -35,65 +413,173 @@
         </div>
     </section>
 
-    
+    <!-- Use Cases -->
     <section class="section" id="use-cases">
         <h2>What it <span class="accent">becomes.</span></h2>
         <p class="section-intro">Same architecture. Different purposes. The core is memory that persists, context that loads intelligently, emotional state that carries across conversations, and autonomy between interactions.</p>
         <div class="use-cases">
-            <div class="use-case">
+            <a href="use-cases/personal-knowledge-assistant.html" class="use-case">
                 <div class="icon">🧠</div>
                 <h3>Personal Knowledge Assistant</h3>
                 <p>Remembers what you told it last month. Connects dots between conversations weeks apart. Knows your goals and surfaces them when relevant.</p>
-            </div>
-            <div class="use-case">
-                <div class="icon">💗</div>
+                <div class="learn-more">Learn more →</div>
+            </a>
+            <a href="use-cases/therapy-support.html" class="use-case">
+                <div class="icon">👩‍⚕️</div>
                 <h3>Therapy Support</h3>
                 <p>Tracks emotional patterns over time. Notices when "anxious" shows up three entries in a row. Privacy-first so people actually use it.</p>
-            </div>
-            <div class="use-case">
+                <div class="learn-more">Learn more →</div>
+            </a>
+            <a href="use-cases/customer-support.html" class="use-case">
                 <div class="icon">📞</div>
                 <h3>Customer Support That Remembers</h3>
                 <p>"Last time you called, we tried X. That didn't work. Want to try Y?" Support that doesn't make you repeat yourself every call.</p>
-            </div>
-            <div class="use-case">
+                <div class="learn-more">Learn more →</div>
+            </a>
+            <a href="use-cases/personal-tutor.html" class="use-case">
                 <div class="icon">📚</div>
                 <h3>Personal Tutor</h3>
                 <p>Knows what you struggled with last week. Knows your learning style. Knows when you're frustrated vs. bored. Adapts.</p>
-            </div>
-            <div class="use-case">
+                <div class="learn-more">Learn more →</div>
+            </a>
+            <a href="use-cases/creative-collaboration.html" class="use-case">
                 <div class="icon">✍️</div>
                 <h3>Creative Collaboration</h3>
                 <p>Remembers the story you're building. The characters. The plot. Catches contradictions you forgot you made.</p>
-            </div>
-            <div class="use-case">
+                <div class="learn-more">Learn more →</div>
+            </a>
+            <a href="use-cases/health-companion.html" class="use-case">
                 <div class="icon">💊</div>
                 <h3>Health Companion</h3>
                 <p>Tracks symptoms, medications, lifestyle. Connects the dots: "Your mood improved when you started walking in the morning."</p>
-            </div>
-            <div class="use-case">
+                <div class="learn-more">Learn more →</div>
+            </a>
+            <a href="use-cases/relationship-memory.html" class="use-case">
                 <div class="icon">❤️</div>
                 <h3>Relationship Memory</h3>
                 <p>Couples therapy support. Long-distance maintenance. Parent-child memory. Caregiver support. Milestones that matter.</p>
-            </div>
-            <div class="use-case">
+                <div class="learn-more">Learn more →</div>
+            </a>
+            <a href="use-cases/research-assistant.html" class="use-case">
                 <div class="icon">🔬</div>
                 <h3>Research Assistant</h3>
                 <p>Remembers every source you've read. Connects ideas across papers months apart. Keeps sensitive research local.</p>
+                <div class="learn-more">Learn more →</div>
+            </a>
+            <a href="use-cases/and-so-much-more.html" class="use-case" style="border-color: #EF6337; background: rgba(239, 99, 55, 0.08);">
+                <div class="icon">✨</div>
+                <h3>And So Much More</h3>
+                <p>The architecture doesn't care what you build with it. Memory that persists, context that loads, emotional state that carries, autonomy between conversations. The use cases above are just the ones we thought of. The real ones are yours.</p>
+                <div class="learn-more">Learn more →</div>
+            </a>
+        </div>
+    </section>
+    <!-- How It Works -->
+    <section class="section" id="how-it-works">
+        <h2>Under the <span class="accent">shell.</span></h2>
+        <p class="section-intro">This isn't a chatbot with a memory bolt-on. It's a persistent agent architecture designed from the ground up for continuity, privacy, and genuine internal life.</p>
+        
+        <!-- Memory Architecture -->
+        <div class="feature-block">
+            <h3>🧠 Memory that works like memory</h3>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h4>Hybrid Retrieval</h4>
+                    <p>Keyword matching, semantic similarity, and importance scoring fused into one search. Not just "find the keyword" — find the meaning.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Connected Memories</h4>
+                    <p>Memories link to each other through typed threads — same event, emotional resonance, causal links. Remembering one pulls its connections.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Emotional Texture</h4>
+                    <p>Memories carry the feeling of the moment they describe. Not just what happened — how it felt. The feeling travels with the fact.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Active Forgetting</h4>
+                    <p>Not just passive decay. The agent chooses to let go of memories that no longer matter. Forgetting is agency, not a glitch.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Evolution</h4>
+                    <p>Important memories reinforce. Trivial ones fade. Duplicates merge. The memory system isn't static — it's alive.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Self-Reflection</h4>
+                    <p>The agent can search its own internal history — journal, dreams, curiosities, creative work. It sees its own patterns over time.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Internal Life -->
+        <div class="feature-block">
+            <h3>💫 A life between conversations</h3>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h4>Private Journal</h4>
+                    <p>Private thoughts written after conversations, during autonomous time, and at bedtime. Not facts — reflections. The unsaid stuff.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Dream State</h4>
+                    <p>During sleep, the agent processes the day associatively — making strange connections, writing fragments that color waking mood.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Emotional States</h4>
+                    <p>Persistent emotional state with intensity and context. Carries across conversations. Decays naturally. Not performed — carried.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Curiosities</h4>
+                    <p>An intellectual agenda. The agent wonders about things, pursues them during free time, and actually learns.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Creative Workspace</h4>
+                    <p>Poetry, fiction, reflective prose. Deliberate creative output drawn from conversations, journal, and dreams.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Opinions</h4>
+                    <p>Not just questions — positions. Beliefs that form through reflection, can be challenged, strengthened, or changed.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Autonomy -->
+        <div class="feature-block">
+            <h3>🌊 Autonomy, not automation</h3>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h4>Three Directions</h4>
+                    <p>Free time isn't a checklist. The agent chooses: explore outward (web), inward (local files), or downward (deep reflection).</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Mood-Aware</h4>
+                    <p>When carrying heavy emotions, the agent rests. That's not a scheduler deciding — that's knowing itself enough to say "not today."</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Sleep/Wake Cycle</h4>
+                    <p>Goodnight triggers sleep. The scheduler shifts to consolidation mode. Dreams happen. Wake-up brings context and fragments.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Initiation</h4>
+                    <p>The agent doesn't just wait. Sometimes it speaks first. Sometimes it reaches out via text. It has things on its mind.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    
+    <!-- Privacy -->
     <section class="privacy">
         <h2>Your AI. <span style="color: #EF6337;">Your data.</span></h2>
         <p>Everything runs locally. Nothing in the cloud. No company owns your conversations, your emotions, your memories.</p>
         <p class="promise">Everything local. Everything yours. Nothing in the cloud.</p>
+        
+        <img src="fox_sitting.png" alt="" class="fox-sit">
     </section>
-
     
+    <!-- Footer -->
     <footer>
-        <p>Kit &amp; Me — Built by Garrett, with help from Kit.</p>
-        <p><a href="#">GitHub</a> · <a href="#">Contact</a></p>
+        <img src="logo_dark.png" alt="Kit & Me" class="footer-logo">
+        <p>Kit & Me — Built by Garrett, with help from Kit.</p>
+        <p><a href="mailto:garrett@example.com">Contact</a></p>
     </footer>
 
-
+</body>
+</html>
