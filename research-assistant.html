@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kit & Me — [Use Case Name]</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #000000;
+            color: #F0F2F6;
+            line-height: 1.6;
+        }
+
+        .nav {
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid rgba(239, 99, 55, 0.1);
+        }
+
+        .nav a {
+            color: #EF6337;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .nav a:hover {
+            color: #A81B0A;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .hero-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        h1 .accent {
+            color: #EF6337;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.8;
+            margin-bottom: 3rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 2.5rem 0 1rem;
+            color: #F0F2F6;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            opacity: 0.85;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .feature-list li {
+            padding: 0.75rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            opacity: 0.85;
+        }
+
+        .feature-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #EF6337;
+        }
+
+        .cta {
+            margin-top: 3rem;
+            padding: 2rem;
+            border: 1px solid rgba(239, 99, 55, 0.2);
+            border-radius: 8px;
+            background: rgba(239, 99, 55, 0.03);
+            text-align: center;
+        }
+
+        .cta h3 {
+            color: #EF6337;
+            margin-bottom: 0.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.8rem 2rem;
+            background-color: #EF6337;
+            color: #000000;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: #A81B0A;
+            color: #F0F2F6;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="nav">
+        <a href="../index.html">← Back to Kit & Me</a>
+    </div>
+
+    <div class="container">
+        <div class="hero-icon">🔬</div>
+        <h1>Research <span class="accent">Assistant</span></h1>
+        <p class="subtitle">An AI that remembers your research threads — and connects findings you'd never have linked yourself.</p>
+
+        <h2>The Problem</h2>
+        <ul class="feature-list">
+        <li>Research is cumulative. Each finding builds on the last. But AI research tools don't accumulate — they reset. You spend hours building context, sharing sources, establishing what you've already ruled out — and next session, it's gone. You re-trace the same paths. Re-read the same papers. Re-explain the same frameworks. The tool that should be accelerating your work is holding it back by forgetting it.</li>
+
+        <h2>What Kit Does Differently:</h2>
+        <ul class="feature-list">
+        <li>Remembers your full research history across projects and months → Connects findings across fields and time — "this relates to what you found in March" → Knows what you've already ruled out — and doesn't suggest it again → Tracks your hypotheses and how they've evolved → All sources, notes, and connections stay local and searchable by meaning</li>
+        </ul>
+
+        <h2>How It Works</h2>
+        <ul class="feature-list">
+        <li>Kit's semantic search means you find research by concept, not just citation. Memory connections link related findings across projects — a pattern in biology might connect to something from economics three months ago. Importance scoring elevates the findings you've returned to most. When you ask "what do we know about this so far," it pulls the actual accumulated knowledge — not a keyword match. Your research isn't a series of disconnected sessions. It's a growing web of connected findings that builds on itself.</li>
+
+        <div class="cta">
+            <h3>This is just one configuration.</h3>
+            <p>Same architecture. Different purpose. The core is memory that persists.</p>
+            <a href="../index.html" class="btn">See other use cases</a>
+        </div>
+    </div>
+
+</body>
+</html>

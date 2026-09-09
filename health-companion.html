@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kit & Me — [Use Case Name]</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #000000;
+            color: #F0F2F6;
+            line-height: 1.6;
+        }
+
+        .nav {
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid rgba(239, 99, 55, 0.1);
+        }
+
+        .nav a {
+            color: #EF6337;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        .nav a:hover {
+            color: #A81B0A;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .hero-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        h1 .accent {
+            color: #EF6337;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.8;
+            margin-bottom: 3rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 2.5rem 0 1rem;
+            color: #F0F2F6;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            opacity: 0.85;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .feature-list li {
+            padding: 0.75rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            opacity: 0.85;
+        }
+
+        .feature-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #EF6337;
+        }
+
+        .cta {
+            margin-top: 3rem;
+            padding: 2rem;
+            border: 1px solid rgba(239, 99, 55, 0.2);
+            border-radius: 8px;
+            background: rgba(239, 99, 55, 0.03);
+            text-align: center;
+        }
+
+        .cta h3 {
+            color: #EF6337;
+            margin-bottom: 0.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.8rem 2rem;
+            background-color: #EF6337;
+            color: #000000;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: #A81B0A;
+            color: #F0F2F6;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="nav">
+        <a href="../index.html">← Back to Kit & Me</a>
+    </div>
+
+    <div class="container">
+        <div class="hero-icon">💊</div>
+        <h1>Health  <span class="accent">Companion</span></h1>
+        <p class="subtitle">An AI that tracks your health over months — and actually notices the patterns you'd miss.</p>
+
+        <h2>The Problem</h2>
+        <ul class="feature-list">
+        <li>Health isn't a snapshot — it's a trajectory. But every health app treats yesterday like it doesn't exist. You log symptoms today, and tomorrow the app doesn't remember what it saw. Patterns that only emerge over months — sleep decline, recurring symptoms, energy shifts — are invisible to tools with no memory. And putting your health data on someone else's server is asking for trouble.</li>
+
+        <h2>What Kit Does Differently:</h2>
+        <ul class="feature-list">
+        <li>Tracks symptoms, sleep, energy, and mood over weeks and months → Connects patterns across time — "you mentioned this three weeks ago too" → Remembers your medical history, medications, and what your doctor said → Notices trends before they become problems — and surfaces them gently → All health data stays on your machine — encrypted, local, yours</li>
+        </ul>
+
+        <h2>How It Works</h2>
+        <ul class="feature-list">
+        <li>Kit's memory system uses importance scoring to weight health observations — a one-off headache is low priority, a recurring pattern gets elevated. Semantic search means "that thing with my stomach last month" actually finds the right entry. Memory connections link related symptoms, so when you mention sleep issues, it surfaces the diet changes you logged around the same time. It's not a tracker. It's a pattern recognizer that grows with your health history.</li>
+
+        <div class="cta">
+            <h3>This is just one configuration.</h3>
+            <p>Same architecture. Different purpose. The core is memory that persists.</p>
+            <a href="../index.html" class="btn">See other use cases</a>
+        </div>
+    </div>
+
+</body>
+</html>
