@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roadmap — Kit & Me</title>
+    <link rel="icon" href="Kit%20and%20Me%20logo.png" type="image/png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        :root {
+            --bg: #0d0d14;
+            --bg-card: #15151f;
+            --bg-card-hover: #1a1a26;
+            --border: #2a2a3a;
+            --text: #e0e0ea;
+            --text-dim: #8a8a9a;
+            --text-faint: #5a5a6a;
+            --fox: #EF6337;
+            --fox-dim: #c54e2a;
+            --green: #4ade80;
+            --yellow: #facc15;
+            --red: #f87171;
+            --blue: #60a5fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* --- Header --- */
+        .header {
+            text-align: center;
+            padding: 80px 20px 60px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 12px;
+        }
+
+        .header h1 span {
+            color: var(--fox);
+        }
+
+        .header p {
+            font-size: 1.15rem;
+            color: var(--text-dim);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* --- Legend --- */
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: var(--text-dim);
+        }
+
+        .legend-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .legend-dot.done { background: var(--green); }
+        .legend-dot.next { background: var(--fox); }
+        .legend-dot.hold { background: var(--yellow); }
+        .legend-dot.gone { background: var(--red); }
+
+        /* --- Main Content --- */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 20px 100px;
+        }
+
+        /* --- Phase --- */
+        .phase {
+            margin-bottom: 60px;
+        }
+
+        .phase-header {
+            display: flex;
+            align-items: baseline;
+            gap: 16px;
+            margin-bottom: 8px;
+        }
+
+        .phase-number {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--fox);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .phase-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+        }
+
+        .phase-desc {
+            color: var(--text-dim);
+            font-size: 1rem;
+            margin-bottom: 24px;
+            max-width: 700px;
+        }
+
+        /* --- Feature Grid --- */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 12px;
+        }
+
+        .feature {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 16px 18px;
+            transition: background 0.2s, border-color 0.2s;
+        }
+
+        .feature:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--fox-dim);
+        }
+
+        .feature-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 6px;
+        }
+
+        .feature-status {
+            font-size: 1rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .feature-name {
+            font-weight: 500;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        .feature-desc {
+            font-size: 0.82rem;
+            color: var(--text-dim);
+            line-height: 1.5;
+            padding-left: 26px;
+        }
+
+        .feature.new {
+            border-color: var(--fox-dim);
+            background: linear-gradient(135deg, var(--bg-card), rgba(239, 99, 55, 0.05));
+        }
+
+        .feature.new .feature-name::after {
+            content: " NEW";
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: var(--fox);
+            background: rgba(239, 99, 55, 0.15);
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-left: 6px;
+            vertical-align: middle;
+        }
+
+        /* --- Status Icons --- */
+        .status-done { color: var(--green); }
+        .status-next { color: var(--fox); }
+        .status-hold { color: var(--yellow); }
+        .status-gone { color: var(--red); }
+
+        /* --- Phase Status Badge --- */
+        .phase-badge {
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: 20px;
+            margin-left: auto;
+        }
+
+        .phase-badge.complete {
+            background: rgba(74, 222, 128, 0.15);
+            color: var(--green);
+        }
+
+        .phase-badge.partial {
+            background: rgba(239, 99, 55, 0.15);
+            color: var(--fox);
+        }
+
+        .phase-badge.not-started {
+            background: rgba(138, 138, 154, 0.15);
+            color: var(--text-dim);
+        }
+
+        /* --- Divider --- */
+        .divider {
+            height: 1px;
+            background: var(--border);
+            margin: 40px 0;
+        }
+
+        /* --- Footer --- */
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid var(--border);
+            color: var(--text-faint);
+            font-size: 0.85rem;
+        }
+
+        .footer a {
+            color: var(--fox);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- Back Link --- */
+        .back-link {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--fox);
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 600px) {
+            .header h1 { font-size: 2rem; }
+            .phase-title { font-size: 1.4rem; }
+            .features { grid-template-columns: 1fr; }
+            .legend { gap: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+    <h1>The <span>Roadmap</span></h1>
+    <p>Building a house, then making it a home, then living in it.</p>
+</div>
+
+<!-- Legend -->
+<div class="legend">
+    <div class="legend-item"><div class="legend-dot done"></div> Complete</div>
+    <div class="legend-item"><div class="legend-dot next"></div> Next Up</div>
+    <div class="legend-item"><div class="legend-dot hold"></div> On Hold</div>
+    <div class="legend-item"><div class="legend-dot gone"></div> Not Doing</div>
+</div>
+
+<!-- Main Content -->
+<div class="container">
+
+    <a href="index.html" class="back-link">← Back to Kit & Me</a>
+
+    <!-- Phase 1 -->
+    <div class="phase">
+        <div class="phase-header">
+            <span class="phase-number">Phase 1</span>
+            <span class="phase-title">Pouring the Foundation</span>
+            <span class="phase-badge complete">Complete</span>
+        </div>
+        <p class="phase-desc">The structural basics. Chat, memory safety, file handling. The concrete slab everything else stands on.</p>
+        <div class="features">
+            <div class="feature">
+                <div class="feature-header">
+                    <span class="feature-status status-done">✅</span>
+                    <span class="feature-name">Text editing</span>
+                </div>
+                <p class="feature-desc">Edit messages in chat. Critical for dyslexia — fix typos without retyping.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-header">
+                    <span class="feature-status status-done">✅</span>
+                    <span class="feature-name">Delete conversation parts</span>
+                </div>
+                <p class="feature-desc">Remove individual messages or message pairs. Confirmation prompt prevents accidents.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-header">
+                    <span class="feature-status status-done">✅</span>
+                    <span class="feature-name">Copy button fix</span>
+                </div>
+                <p class="feature-desc">Clipboard access restored. Uses navigator.clipboard with fallback for non-HTTPS.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-header">
+                    <span class="feature-status status-done">✅</span>
+                    <span class="feature-name">File attachments</span>
+                </div>
+                <p class="feature-desc">Text files, PDFs, code (50K limit), images. Processed locally, never stored permanently.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-header">
+                    <span class="feature-status status-done">✅</span>
+                    <span class="feature-name">Auto-save conversations</span>
+                </div>
+                <p class="feature-desc">Saves to archive every 10 minutes
