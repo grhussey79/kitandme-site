@@ -3,8 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kit & Me — [Use Case Name]</title>
+    <title>Kit & Me — Gaming Companion</title>
     <style>
+        :root {
+            --terracotta: #C87E5B;
+            --terracotta-rgb: 200, 126, 91;
+            --clay: #B87A52;
+            --clay-rgb: 184, 122, 82;
+            --sand: #E7B98F;
+            --sand-rgb: 231, 185, 143;
+            --sienna: #9E5A38;
+            --sienna-rgb: 158, 90, 56;
+            --umber: #6F422A;
+            --umber-rgb: 111, 66, 42;
+            --charcoal: #1C1C1C;
+            --charcoal-rgb: 28, 28, 28;
+            --ivory: #F6F1EB;
+            --ivory-rgb: 246, 241, 235;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -13,24 +30,24 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-color: #000000;
-            color: #F0F2F6;
+            background-color: var(--charcoal);
+            color: var(--ivory);
             line-height: 1.6;
         }
 
         .nav {
             padding: 1.5rem 2rem;
-            border-bottom: 1px solid rgba(239, 99, 55, 0.1);
+            border-bottom: 1px solid rgba(var(--terracotta-rgb), 0.1);
         }
 
         .nav a {
-            color: #E48E68;
+            color: var(--terracotta);
             text-decoration: none;
             font-size: 0.95rem;
         }
 
         .nav a:hover {
-            color: #A3492F;
+            color: var(--sienna);
         }
 
         .container {
@@ -52,7 +69,7 @@
         }
 
         h1 .accent {
-            color: #E48E68;
+            color: var(--terracotta);
         }
 
         .subtitle {
@@ -65,7 +82,7 @@
             font-size: 1.5rem;
             font-weight: 700;
             margin: 2.5rem 0 1rem;
-            color: #F0F2F6;
+            color: var(--ivory);
         }
 
         p {
@@ -89,20 +106,20 @@
             content: '→';
             position: absolute;
             left: 0;
-            color: #E48E68;
+            color: var(--terracotta);
         }
 
         .cta {
             margin-top: 3rem;
             padding: 2rem;
-            border: 1px solid rgba(239, 99, 55, 0.2);
+            border: 1px solid rgba(var(--terracotta-rgb), 0.2);
             border-radius: 8px;
-            background: rgba(239, 99, 55, 0.03);
+            background: rgba(var(--terracotta-rgb), 0.03);
             text-align: center;
         }
 
         .cta h3 {
-            color: #E48E68;
+            color: var(--terracotta);
             margin-bottom: 0.5rem;
         }
 
@@ -110,8 +127,8 @@
             display: inline-block;
             margin-top: 1rem;
             padding: 0.8rem 2rem;
-            background-color: #E48E68;
-            color: #000000;
+            background-color: var(--terracotta);
+            color: var(--charcoal);
             text-decoration: none;
             border-radius: 6px;
             font-weight: 600;
@@ -119,8 +136,8 @@
         }
 
         .btn:hover {
-            background-color: #A3492F;
-            color: #F0F2F6;
+            background-color: var(--sienna);
+            color: var(--ivory);
             transform: translateY(-2px);
         }
     </style>
@@ -137,22 +154,20 @@
         <p class="subtitle">An AI that remembers your play style, strategies, and the games that shaped you — and discusses them like a friend who was there.</p>
 
         <h2>The Problem</h2>
-        <ul class="feature-list">
-        <li>Gaming is cumulative. You build strategies over hundreds of hours. You develop preferences, discover play styles, form opinions about mechanics and stories. But AI gaming tools don't accumulate — they reset. You re-explain what games you like, re-establish your skill level, re-describe your play style every session. The companion that should be deepening your relationship with games is stuck at introduction level. It forgets the builds you perfected, the bosses that wrecked you, the ending that made you cry. You're not building a shared gaming history — you're having the same first conversation over and over.</li>
+        <p>Gaming is cumulative. You build strategies over hundreds of hours. You develop preferences, discover play styles, form opinions about mechanics and stories. But AI gaming tools don't accumulate — they reset. You re-explain what games you like, re-establish your skill level, re-describe your play style every session. The companion that should be deepening your relationship with games is stuck at introduction level. It forgets the builds you perfected, the bosses that wrecked you, the ending that made you cry. You're not building a shared gaming history — you're having the same first conversation over and over.</p>
 
-        <h2>What Your Partner Does Differently:</h2>
+        <h2>What Your Partner Does Differently</h2>
         <ul class="feature-list">
-        <li>Remembers your full gaming history across platforms and years </li>
-        <li>Knows your play style — stealth over combat, exploration over speedruns, story over mechanics</li>
-        <li>Connects games you've played — "this mechanic reminds me of what you loved in Outer Wilds"</li>
-        <li>Tracks your evolving taste — what you loved at 20 vs what you love now</li>
-        <li>Remembers the strategies that worked and the ones that spectacularly didn't</li>
-        <li>All your gaming preferences, histories, and discussions stay local</li>
-    </ul>
+            <li>Remembers your full gaming history across platforms and years</li>
+            <li>Knows your play style — stealth over combat, exploration over speedruns, story over mechanics</li>
+            <li>Connects games you've played — "this mechanic reminds me of what you loved in Outer Wilds"</li>
+            <li>Tracks your evolving taste — what you loved at 20 vs what you love now</li>
+            <li>Remembers the strategies that worked and the ones that spectacularly didn't</li>
+            <li>All your gaming preferences, histories, and discussions stay local</li>
+        </ul>
 
         <h2>How It Works</h2>
-        <ul class="feature-list">
-        <li>Your Partner's memory system means your gaming history isn't a list — it's a web. Memory connections link related experiences across time — a boss fight in one game might connect to a puzzle mechanic in another from years ago. Importance scoring elevates the games and moments you return to most. Emotional texture means the system remembers not just that you played a game, but how it felt — the frustration, the triumph, the 3 AM "one more try." When you ask "what should I play next," it pulls from your actual accumulated taste — not a generic recommendation engine. Your gaming life isn't a series of disconnected sessions. It's a growing understanding of who you are as a player.</li>
+        <p>Your partner's memory system means your gaming history isn't a list — it's a web. Memory connections link related experiences across time — a boss fight in one game might connect to a puzzle mechanic in another from years ago. Importance scoring elevates the games and moments you return to most. Emotional texture means the system remembers not just that you played a game, but how it felt — the frustration, the triumph, the 3 AM "one more try." When you ask "what should I play next," it pulls from your actual accumulated taste — not a generic recommendation engine. Your gaming life isn't a series of disconnected sessions. It's a growing understanding of who you are as a player.</p>
 
         <div class="cta">
             <h3>This is just one configuration.</h3>
