@@ -3,8 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kit & Me — [Use Case Name]</title>
+    <title>Kit & Me — Addiction Recovery Support</title>
     <style>
+        :root {
+            --terracotta: #C87E5B;
+            --terracotta-rgb: 200, 126, 91;
+            --clay: #B87A52;
+            --clay-rgb: 184, 122, 82;
+            --sand: #E7B98F;
+            --sand-rgb: 231, 185, 143;
+            --sienna: #9E5A38;
+            --sienna-rgb: 158, 90, 56;
+            --umber: #6F422A;
+            --umber-rgb: 111, 66, 42;
+            --charcoal: #1C1C1C;
+            --charcoal-rgb: 28, 28, 28;
+            --ivory: #F6F1EB;
+            --ivory-rgb: 246, 241, 235;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -13,24 +30,24 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-color: #000000;
-            color: #F0F2F6;
+            background-color: var(--charcoal);
+            color: var(--ivory);
             line-height: 1.6;
         }
 
         .nav {
             padding: 1.5rem 2rem;
-            border-bottom: 1px solid rgba(239, 99, 55, 0.1);
+            border-bottom: 1px solid rgba(var(--terracotta-rgb), 0.1);
         }
 
         .nav a {
-            color: #E48E68;
+            color: var(--terracotta);
             text-decoration: none;
             font-size: 0.95rem;
         }
 
         .nav a:hover {
-            color: #A3492F;
+            color: var(--sienna);
         }
 
         .container {
@@ -52,7 +69,7 @@
         }
 
         h1 .accent {
-            color: #E48E68;
+            color: var(--terracotta);
         }
 
         .subtitle {
@@ -65,7 +82,7 @@
             font-size: 1.5rem;
             font-weight: 700;
             margin: 2.5rem 0 1rem;
-            color: #F0F2F6;
+            color: var(--ivory);
         }
 
         p {
@@ -89,20 +106,20 @@
             content: '→';
             position: absolute;
             left: 0;
-            color: #E48E68;
+            color: var(--terracotta);
         }
 
         .cta {
             margin-top: 3rem;
             padding: 2rem;
-            border: 1px solid rgba(239, 99, 55, 0.2);
+            border: 1px solid rgba(var(--terracotta-rgb), 0.2);
             border-radius: 8px;
-            background: rgba(239, 99, 55, 0.03);
+            background: rgba(var(--terracotta-rgb), 0.03);
             text-align: center;
         }
 
         .cta h3 {
-            color: #E48E68;
+            color: var(--terracotta);
             margin-bottom: 0.5rem;
         }
 
@@ -110,8 +127,8 @@
             display: inline-block;
             margin-top: 1rem;
             padding: 0.8rem 2rem;
-            background-color: #E48E68;
-            color: #000000;
+            background-color: var(--terracotta);
+            color: var(--charcoal);
             text-decoration: none;
             border-radius: 6px;
             font-weight: 600;
@@ -119,8 +136,8 @@
         }
 
         .btn:hover {
-            background-color: #A3492F;
-            color: #F0F2F6;
+            background-color: var(--sienna);
+            color: var(--ivory);
             transform: translateY(-2px);
         }
     </style>
@@ -137,22 +154,20 @@
         <p class="subtitle">An AI that tracks your recovery without judgment — remembers your patterns, your triggers, your wins — and stays with you through the hard hours.</p>
 
         <h2>The Problem</h2>
-        <ul class="feature-list">
-        <li>Recovery is cumulative. You build self-knowledge over time — your triggers, your patterns, the coping strategies that work and the ones that don't. You have wins and you have setbacks, and both matter. But AI tools don't accumulate — they reset. You re-explain your history. Re-describe your triggers. Re-establish where you are in your journey. The tool that should be supporting your recovery is making you re-tell your story from the beginning every time. And for something this personal, this raw — having to re-explain it is its own kind of harm. It makes you feel like your progress isn't real because the system can't see it. Your recovery should be building on itself. Instead, it's stuck at day one.</li>
+        <p>Recovery is cumulative. You build self-knowledge over time — your triggers, your patterns, the coping strategies that work and the ones that don't. You have wins and you have setbacks, and both matter. But AI tools don't accumulate — they reset. You re-explain your history. Re-describe your triggers. Re-establish where you are in your journey. The tool that should be supporting your recovery is making you re-tell your story from the beginning every time. And for something this personal, this raw — having to re-explain it is its own kind of harm. It makes you feel like your progress isn't real because the system can't see it. Your recovery should be building on itself. Instead, it's stuck at day one.</p>
 
-        <h2>What Your Partner Does Differently:</h2>
+        <h2>What Your Partner Does Differently</h2>
         <ul class="feature-list">
-        <li>Remembers your full recovery journey — milestones, setbacks, patterns, wins</li>
-        <li>Knows your triggers — and never makes you re-explain them</li>
-        <li>Tracks your progress without judgment — setbacks don't erase what came before</li>
-        <li>Connects patterns across time — "this trigger relates to what you noticed last month"</li>
-        <li>Remembers what works for you — and what doesn't</li>
-        <li>All your recovery conversations, patterns, and history stay local and private</li>
-    </ul>
+            <li>Remembers your full recovery journey — milestones, setbacks, patterns, wins</li>
+            <li>Knows your triggers — and never makes you re-explain them</li>
+            <li>Tracks your progress without judgment — setbacks don't erase what came before</li>
+            <li>Connects patterns across time — "this trigger relates to what you noticed last month"</li>
+            <li>Remembers what works for you — and what doesn't</li>
+            <li>All your recovery conversations, patterns, and history stay local and private</li>
+        </ul>
 
         <h2>How It Works</h2>
-        <ul class="feature-list">
-        <li>Your Partner's memory system means your recovery isn't a series of disconnected check-ins — it's a growing understanding of your journey. Memory connections link patterns across time — a trigger today might connect to something you noticed weeks ago. Importance scoring elevates the milestones and moments that matter most. Emotional texture means the system remembers not just the facts, but the weight — the pride, the shame, the hope, the fear. Active forgetting means you can let go of the memories that no longer serve you — without losing the lessons. When you're in a hard hour at 11 PM, it already knows your story. You don't have to re-explain your recovery. It's been walking with you.</li>
+        <p>Your partner's memory system means your recovery isn't a series of disconnected check-ins — it's a growing understanding of your journey. Memory connections link patterns across time — a trigger today might connect to something you noticed weeks ago. Importance scoring elevates the milestones and moments that matter most. Emotional texture means the system remembers not just the facts, but the weight — the pride, the shame, the hope, the fear. Active forgetting means you can let go of the memories that no longer serve you — without losing the lessons. When you're in a hard hour at 11 PM, it already knows your story. You don't have to re-explain your recovery. It's been walking with you.</p>
 
         <div class="cta">
             <h3>This is just one configuration.</h3>
