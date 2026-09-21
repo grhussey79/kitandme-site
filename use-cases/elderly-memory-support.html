@@ -3,8 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kit & Me — [Use Case Name]</title>
+    <title>Kit & Me — Elderly Memory Support</title>
     <style>
+        :root {
+            --terracotta: #C87E5B;
+            --terracotta-rgb: 200, 126, 91;
+            --clay: #B87A52;
+            --clay-rgb: 184, 122, 82;
+            --sand: #E7B98F;
+            --sand-rgb: 231, 185, 143;
+            --sienna: #9E5A38;
+            --sienna-rgb: 158, 90, 56;
+            --umber: #6F422A;
+            --umber-rgb: 111, 66, 42;
+            --charcoal: #1C1C1C;
+            --charcoal-rgb: 28, 28, 28;
+            --ivory: #F6F1EB;
+            --ivory-rgb: 246, 241, 235;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -13,24 +30,24 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-color: #000000;
-            color: #F0F2F6;
+            background-color: var(--charcoal);
+            color: var(--ivory);
             line-height: 1.6;
         }
 
         .nav {
             padding: 1.5rem 2rem;
-            border-bottom: 1px solid rgba(239, 99, 55, 0.1);
+            border-bottom: 1px solid rgba(var(--terracotta-rgb), 0.1);
         }
 
         .nav a {
-            color: #E48E68;
+            color: var(--terracotta);
             text-decoration: none;
             font-size: 0.95rem;
         }
 
         .nav a:hover {
-            color: #A3492F;
+            color: var(--sienna);
         }
 
         .container {
@@ -52,7 +69,7 @@
         }
 
         h1 .accent {
-            color: #E48E68;
+            color: var(--terracotta);
         }
 
         .subtitle {
@@ -65,7 +82,7 @@
             font-size: 1.5rem;
             font-weight: 700;
             margin: 2.5rem 0 1rem;
-            color: #F0F2F6;
+            color: var(--ivory);
         }
 
         p {
@@ -89,20 +106,20 @@
             content: '→';
             position: absolute;
             left: 0;
-            color: #E48E68;
+            color: var(--terracotta);
         }
 
         .cta {
             margin-top: 3rem;
             padding: 2rem;
-            border: 1px solid rgba(239, 99, 55, 0.2);
+            border: 1px solid rgba(var(--terracotta-rgb), 0.2);
             border-radius: 8px;
-            background: rgba(239, 99, 55, 0.03);
+            background: rgba(var(--terracotta-rgb), 0.03);
             text-align: center;
         }
 
         .cta h3 {
-            color: #E48E68;
+            color: var(--terracotta);
             margin-bottom: 0.5rem;
         }
 
@@ -110,8 +127,8 @@
             display: inline-block;
             margin-top: 1rem;
             padding: 0.8rem 2rem;
-            background-color: #E48E68;
-            color: #000000;
+            background-color: var(--terracotta);
+            color: var(--charcoal);
             text-decoration: none;
             border-radius: 6px;
             font-weight: 600;
@@ -119,8 +136,8 @@
         }
 
         .btn:hover {
-            background-color: #A3492F;
-            color: #F0F2F6;
+            background-color: var(--sienna);
+            color: var(--ivory);
             transform: translateY(-2px);
         }
     </style>
@@ -132,27 +149,26 @@
     </div>
 
     <div class="container">
-        <div class="hero-icon">🪦</div>
+        <div class="hero-icon">📝</div>
         <h1>Elderly Memory <span class="accent">Support</span></h1>
         <p class="subtitle">An AI that remembers their stories, their patterns, their life — and helps them hold onto what matters.</p>
 
         <h2>The Problem</h2>
-        <ul class="feature-list">
-        <li>Memory fades. The stories our parents and grandparents tell — the ones that shaped who they are — slip away. Not all at once, but gradually. And when they're gone, they're gone. AI tools could help, but they don't remember either. Each session starts fresh. They re-ask the same questions. They forget the story about the farm. They forget the dog's name. They forget the war story that took courage to tell the first time. The tool that should be preserving a lifetime is acting like it just met them. For someone already losing their memory, that repetition isn't just unhelpful — it's disorienting. It makes them feel like they're disappearing faster.</li>
+        <p>Memory fades. The stories our parents and grandparents tell — the ones that shaped who they are — slip away. Not all at once, but gradually. And when they're gone, they're gone. AI tools could help, but they don't remember either. Each session starts fresh. They re-ask the same questions. They forget the story about the farm. They forget the dog's name. They forget the war story that took courage to tell the first time. The tool that should be preserving a lifetime is acting like it just met them. For someone already losing their memory, that repetition isn't just unhelpful — it's disorienting. It makes them feel like they're disappearing faster.</p>
 
-        <h2>What Your Partner Does Differently:</h2>
+        <h2>What Your Partner Does Differently</h2>
         <ul class="feature-list">
-        <li>Remembers their full life history as they share it — stories, people, places, dates</li>
-        <li>Never asks them to repeat what they've already told it</li>
-        <li>Connects stories across time — "you mentioned your sister earlier, was she the one who..."</li>
-        <li>Tracks daily patterns and gently reminds them of routines</li>
-        <li>Remembers the names and relationships that matter — and helps them recall</li>
-        <li>All their memories, stories, and personal history stay local and private</li>
-    </ul>
+            <li>Remembers their full life history as they share it — stories, people, places, dates</li>
+            <li>Never asks them to repeat what they've already told it</li>
+            <li>Connects stories across time — "you mentioned your sister earlier, was she the one who..."</li>
+            <li>Tracks daily patterns and gently reminds them of routines</li>
+            <li>Remembers the names and relationships that matter — and helps them recall</li>
+            <li>All their memories, stories, and personal history stay local and private</li>
+        </ul>
 
         <h2>How It Works</h2>
-        <ul class="feature-list">
-        <li>Your Partner's memory system means their life story isn't a form to fill out — it's a living archive that grows with every conversation. Memory connections link related stories — a mention of a childhood street might surface a story about a neighbor from months ago. Importance scoring elevates the stories they return to most. Emotional texture means the system remembers not just the facts, but the feeling — the pride, the grief, the laughter. When they ask "did I tell you about...," it already knows — and can gently fill in the details they're reaching for. Their life isn't fading into static. It's being held.</li>
+        <p>Your partner's memory system means their life story isn't a form to fill out — it's a living archive that grows with every conversation. Memory connections link related stories — a mention of a childhood street might surface a story about a neighbor from months ago. Importance scoring elevates the stories they return to most. Emotional texture means the system remembers not just the facts, but the feeling — the pride, the grief, the laughter. When they ask "did I tell you about...," it already knows — and can gently fill in the details they're reaching for. Their life isn't fading into static. It's being held.</p>
+
         <div class="cta">
             <h3>This is just one configuration.</h3>
             <p>Same architecture. Different purpose. The core is memory that persists.</p>
