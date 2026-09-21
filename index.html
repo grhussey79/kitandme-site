@@ -8,6 +8,22 @@
     
     <title>Kit & Me — Stateful AI that remembers you, locally.</title>
     <style>
+        :root {
+            --terracotta: #C87E5B;
+            --terracotta-rgb: 200, 126, 91;
+            --clay: #B87A52;
+            --clay-rgb: 184, 122, 82;
+            --sand: #E7B98F;
+            --sand-rgb: 231, 185, 143;
+            --sienna: #9E5A38;
+            --sienna-rgb: 158, 90, 56;
+            --umber: #6F422A;
+            --umber-rgb: 111, 66, 42;
+            --charcoal: #1C1C1C;
+            --charcoal-rgb: 28, 28, 28;
+            --ivory: #F6F1EB;
+            --ivory-rgb: 246, 241, 235;
+        }
 
         /* How It Works */
         .feature-block {
@@ -17,7 +33,7 @@
         .feature-block h3 {
             font-size: 1.8rem;
             margin-bottom: 1.5rem;
-            color: #F0F2F6;
+            color: var(--ivory);
         }
 
         .feature-grid {
@@ -28,20 +44,20 @@
 
         .feature-item {
             padding: 1.5rem;
-            border: 1px solid rgba(239, 99, 55, 0.15);
+            border: 1px solid rgba(var(--terracotta-rgb), 0.15);
             border-radius: 8px;
-            background: rgba(239, 99, 55, 0.02);
+            background: rgba(var(--terracotta-rgb), 0.02);
             transition: all 0.2s ease;
         }
 
         .feature-item:hover {
-            border-color: rgba(239, 99, 55, 0.4);
-            background: rgba(239, 99, 55, 0.05);
+            border-color: rgba(var(--terracotta-rgb), 0.4);
+            background: rgba(var(--terracotta-rgb), 0.05);
             transform: translateY(-2px);
         }
 
         .feature-item h4 {
-            color: #E48E68;
+            color: var(--terracotta);
             font-size: 1.1rem;
             margin-bottom: 0.5rem;
         }
@@ -65,8 +81,8 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-color: #000000;
-            color: #F0F2F6;
+            background-color: var(--charcoal);
+            color: var(--ivory);
             line-height: 1.6;
             overflow-x: hidden;
         }
@@ -90,7 +106,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at 50% 50%, rgba(239, 99, 55, 0.08) 0%, transparent 60%);
+            background: radial-gradient(circle at 50% 50%, rgba(var(--terracotta-rgb), 0.08) 0%, transparent 60%);
             pointer-events: none;
         }
 
@@ -131,12 +147,12 @@
         }
 
         .hero h1 .accent {
-            color: #E48E68;
+            color: var(--terracotta);
         }
 
         .hero p {
             font-size: clamp(1.1rem, 2vw, 1.5rem);
-            color: #F0F2F6;
+            color: var(--ivory);
             opacity: 0.8;
             max-width: 600px;
             margin-bottom: 2.5rem;
@@ -166,15 +182,15 @@
         }
 
         .btn-primary {
-            background-color: #E48E68;
-            color: #000000;
+            background-color: var(--terracotta);
+            color: var(--charcoal);
         }
 
         .btn-primary:hover {
-            background-color: #A3492F;
-            color: #F0F2F6;
+            background-color: var(--sienna);
+            color: var(--ivory);
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(239, 99, 55, 0.3);
+            box-shadow: 0 4px 12px rgba(var(--terracotta-rgb), 0.3);
         }
 
         .tags {
@@ -189,14 +205,14 @@
 
         .tag {
             padding: 0.4rem 1.2rem;
-            border: 1px solid #A3492F;
+            border: 1px solid var(--sienna);
             border-radius: 20px;
             font-size: 0.9rem;
-            color: #E48E68;
+            color: var(--terracotta);
             letter-spacing: 0.05em;
             text-transform: uppercase;
             font-weight: 500;
-            background: rgba(239, 99, 55, 0.05);
+            background: rgba(var(--terracotta-rgb), 0.05);
         }
 
         .section {
@@ -213,7 +229,7 @@
         }
 
         .section h2 .accent {
-            color: #E48E68;
+            color: var(--terracotta);
         }
 
         .section-intro {
@@ -231,18 +247,18 @@
 
         .problem-card {
             padding: 2rem;
-            border-left: 3px solid #E48E68;
-            background: rgba(239, 99, 55, 0.03);
+            border-left: 3px solid var(--terracotta);
+            background: rgba(var(--terracotta-rgb), 0.03);
             transition: all 0.2s ease;
         }
 
         .problem-card:hover {
-            background: rgba(239, 99, 55, 0.08);
+            background: rgba(var(--terracotta-rgb), 0.08);
             transform: translateY(-2px);
         }
 
         .problem-card h3 {
-            color: #E48E68;
+            color: var(--terracotta);
             font-size: 1.3rem;
             margin-bottom: 0.5rem;
         }
@@ -260,7 +276,7 @@
 
         .use-case {
             padding: 2rem;
-            border: 1px solid rgba(239, 99, 55, 0.2);
+            border: 1px solid rgba(var(--terracotta-rgb), 0.2);
             border-radius: 8px;
             transition: all 0.2s ease;
             text-decoration: none;
@@ -270,8 +286,8 @@
         }
 
         .use-case:hover {
-            border-color: #E48E68;
-            background: rgba(239, 99, 55, 0.05);
+            border-color: var(--terracotta);
+            background: rgba(var(--terracotta-rgb), 0.05);
             transform: translateY(-4px);
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
         }
@@ -284,7 +300,7 @@
         .use-case h3 {
             font-size: 1.2rem;
             margin-bottom: 0.5rem;
-            color: #F0F2F6;
+            color: var(--ivory);
         }
 
         .use-case p {
@@ -294,7 +310,7 @@
 
         .use-case .learn-more {
             margin-top: 1rem;
-            color: #E48E68;
+            color: var(--terracotta);
             font-size: 0.9rem;
             font-weight: 600;
             opacity: 0;
@@ -308,7 +324,7 @@
         .privacy {
             text-align: center;
             padding: 8rem 2rem;
-            background: linear-gradient(180deg, transparent 0%, rgba(168, 27, 10, 0.05) 100%);
+            background: linear-gradient(180deg, transparent 0%, rgba(var(--sienna-rgb), 0.05) 100%);
             position: relative;
         }
 
@@ -325,7 +341,7 @@
 
         .privacy .promise {
             font-size: 1.5rem;
-            color: #E48E68;
+            color: var(--terracotta);
             font-weight: 600;
             margin-top: 2rem;
         }
@@ -341,7 +357,7 @@
         footer {
             padding: 3rem 2rem;
             text-align: center;
-            border-top: 1px solid rgba(239, 99, 55, 0.1);
+            border-top: 1px solid rgba(var(--terracotta-rgb), 0.1);
         }
 
         footer p {
@@ -350,12 +366,12 @@
         }
 
         footer a {
-            color: #E48E68;
+            color: var(--terracotta);
             text-decoration: none;
         }
 
         footer a:hover {
-            color: #A3492F;
+            color: var(--sienna);
         }
 
         .footer-logo {
@@ -481,7 +497,7 @@
                 <p>Sits with you through loss. Remembers the person you lost. Holds the stories you told about them. Doesn't try to fix you — just stays.</p>
                 <div class="learn-more">Learn more →</div>
             </a>
-            <a href="use-cases/and-so-much-more.html" class="use-case" style="border-color: #E48E68; background: rgba(239, 99, 55, 0.08);">
+            <a href="use-cases/and-so-much-more.html" class="use-case" style="border-color: var(--terracotta); background: rgba(var(--terracotta-rgb), 0.08);">
                 <div class="icon">✨</div>
                 <h3>And So Much More</h3>
                 <p>The architecture doesn't care what you build with it. Memory that persists, context that loads, emotional state that carries, autonomy between conversations. The use cases above are just the ones we thought of. The real ones are yours.</p>
@@ -605,7 +621,7 @@
 
     <!-- Privacy -->
     <section class="privacy">
-        <h2>Your AI. <span style="color: #E48E68;">Your data.</span></h2>
+        <h2>Your AI. <span style="color: var(--terracotta);">Your data.</span></h2>
         <p>Everything runs locally. Memories, journal, emotions, creative work — all stored on your machine. No cloud storage. No third-party data access.</p>
         <p>LLM processing uses Venice.ai for uncensored model access. Your data never leaves your machine to be stored — only to be processed.</p>
         <p class="promise">Everything local. Everything yours. Nothing in the cloud.</p>
