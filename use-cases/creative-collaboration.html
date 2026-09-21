@@ -5,6 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kit & Me — Creative Collaboration</title>
     <style>
+        :root {
+            --terracotta: #C87E5B;
+            --terracotta-rgb: 200, 126, 91;
+            --clay: #B87A52;
+            --clay-rgb: 184, 122, 82;
+            --sand: #E7B98F;
+            --sand-rgb: 231, 185, 143;
+            --sienna: #9E5A38;
+            --sienna-rgb: 158, 90, 56;
+            --umber: #6F422A;
+            --umber-rgb: 111, 66, 42;
+            --charcoal: #1C1C1C;
+            --charcoal-rgb: 28, 28, 28;
+            --ivory: #F6F1EB;
+            --ivory-rgb: 246, 241, 235;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -13,24 +30,24 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-color: #000000;
-            color: #F0F2F6;
+            background-color: var(--charcoal);
+            color: var(--ivory);
             line-height: 1.6;
         }
 
         .nav {
             padding: 1.5rem 2rem;
-            border-bottom: 1px solid rgba(239, 99, 55, 0.1);
+            border-bottom: 1px solid rgba(var(--terracotta-rgb), 0.1);
         }
 
         .nav a {
-            color: #E48E68;
+            color: var(--terracotta);
             text-decoration: none;
             font-size: 0.95rem;
         }
 
         .nav a:hover {
-            color: #A3492F;
+            color: var(--sienna);
         }
 
         .container {
@@ -52,7 +69,7 @@
         }
 
         h1 .accent {
-            color: #E48E68;
+            color: var(--terracotta);
         }
 
         .subtitle {
@@ -65,7 +82,7 @@
             font-size: 1.5rem;
             font-weight: 700;
             margin: 2.5rem 0 1rem;
-            color: #F0F2F6;
+            color: var(--ivory);
         }
 
         p {
@@ -89,20 +106,20 @@
             content: '→';
             position: absolute;
             left: 0;
-            color: #E48E68;
+            color: var(--terracotta);
         }
 
         .cta {
             margin-top: 3rem;
             padding: 2rem;
-            border: 1px solid rgba(239, 99, 55, 0.2);
+            border: 1px solid rgba(var(--terracotta-rgb), 0.2);
             border-radius: 8px;
-            background: rgba(239, 99, 55, 0.03);
+            background: rgba(var(--terracotta-rgb), 0.03);
             text-align: center;
         }
 
         .cta h3 {
-            color: #E48E68;
+            color: var(--terracotta);
             margin-bottom: 0.5rem;
         }
 
@@ -110,8 +127,8 @@
             display: inline-block;
             margin-top: 1rem;
             padding: 0.8rem 2rem;
-            background-color: #E48E68;
-            color: #000000;
+            background-color: var(--terracotta);
+            color: var(--charcoal);
             text-decoration: none;
             border-radius: 6px;
             font-weight: 600;
@@ -119,8 +136,8 @@
         }
 
         .btn:hover {
-            background-color: #A3492F;
-            color: #F0F2F6;
+            background-color: var(--sienna);
+            color: var(--ivory);
             transform: translateY(-2px);
         }
     </style>
@@ -135,18 +152,21 @@
         <div class="hero-icon">✍️</div>
         <h1>Creative <span class="accent">Collaboration</span></h1>
         <p class="subtitle">An AI that remembers your style, your influences, and what you were thinking three projects ago.</p>
-        <h2>The Problem</h2>
-        <ul class="feature-list">
-        <li>Creative AI tools are amnesiacs. You tell them your aesthetic, your influences, your vision — and every new session starts blank. You re-explain your style. Re-share your references. Re-describe what you're going for. And the AI never builds on what you made together last month. It's a collaborator with no memory of the collaboration.</li>
 
-        <h2>What Your Partner Does Differently:</h2>
+        <h2>The Problem</h2>
+        <p>Creative AI tools are amnesiacs. You tell them your aesthetic, your influences, your vision — and every new session starts blank. You re-explain your style. Re-share your references. Re-describe what you're going for. And the AI never builds on what you made together last month. It's a collaborator with no memory of the collaboration.</p>
+
+        <h2>What Your Partner Does Differently</h2>
         <ul class="feature-list">
-        <li>Remembers your creative voice across projects and months → Connects ideas from past work to current problems → Holds your influences and references in memory — no re-uploading → Tracks what you liked and didn't — and uses that to push you further → Local-first means your unreleased work stays yours</li>
+            <li>Remembers your creative voice across projects and months</li>
+            <li>Connects ideas from past work to current problems</li>
+            <li>Holds your influences and references in memory — no re-uploading</li>
+            <li>Tracks what you liked and didn't — and uses that to push you further</li>
+            <li>Local-first means your unreleased work stays yours</li>
         </ul>
 
         <h2>How It Works</h2>
-        <ul class="feature-list">
-        <li>Your Partner's memory system doesn't just store facts — it stores connections. When you reference a color palette from a project three months ago, it finds it by meaning, not filename. When you describe a feeling you're chasing, it remembers the last time you chased something similar and what worked. The semantic search means "that thing with the dark mood and the red accent" actually pulls up the right project. Your creative history becomes a living reference library that grows with you.</li>
+        <p>Your partner's memory system doesn't just store facts — it stores connections. When you reference a color palette from a project three months ago, it finds it by meaning, not filename. When you describe a feeling you're chasing, it remembers the last time you chased something similar and what worked. The semantic search means "that thing with the dark mood and the red accent" actually pulls up the right project. Your creative history becomes a living reference library that grows with you.</p>
 
         <div class="cta">
             <h3>This is just one configuration.</h3>
