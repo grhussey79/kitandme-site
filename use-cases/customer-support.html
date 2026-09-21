@@ -5,6 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kit & Me — Customer Support</title>
     <style>
+        :root {
+            --terracotta: #C87E5B;
+            --terracotta-rgb: 200, 126, 91;
+            --clay: #B87A52;
+            --clay-rgb: 184, 122, 82;
+            --sand: #E7B98F;
+            --sand-rgb: 231, 185, 143;
+            --sienna: #9E5A38;
+            --sienna-rgb: 158, 90, 56;
+            --umber: #6F422A;
+            --umber-rgb: 111, 66, 42;
+            --charcoal: #1C1C1C;
+            --charcoal-rgb: 28, 28, 28;
+            --ivory: #F6F1EB;
+            --ivory-rgb: 246, 241, 235;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -13,24 +30,24 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background-color: #000000;
-            color: #F0F2F6;
+            background-color: var(--charcoal);
+            color: var(--ivory);
             line-height: 1.6;
         }
 
         .nav {
             padding: 1.5rem 2rem;
-            border-bottom: 1px solid rgba(239, 99, 55, 0.1);
+            border-bottom: 1px solid rgba(var(--terracotta-rgb), 0.1);
         }
 
         .nav a {
-            color: #E48E68;
+            color: var(--terracotta);
             text-decoration: none;
             font-size: 0.95rem;
         }
 
         .nav a:hover {
-            color: #A3492F;
+            color: var(--sienna);
         }
 
         .container {
@@ -52,7 +69,7 @@
         }
 
         h1 .accent {
-            color: #E48E68;
+            color: var(--terracotta);
         }
 
         .subtitle {
@@ -65,7 +82,7 @@
             font-size: 1.5rem;
             font-weight: 700;
             margin: 2.5rem 0 1rem;
-            color: #F0F2F6;
+            color: var(--ivory);
         }
 
         p {
@@ -89,20 +106,20 @@
             content: '→';
             position: absolute;
             left: 0;
-            color: #E48E68;
+            color: var(--terracotta);
         }
 
         .cta {
             margin-top: 3rem;
             padding: 2rem;
-            border: 1px solid rgba(239, 99, 55, 0.2);
+            border: 1px solid rgba(var(--terracotta-rgb), 0.2);
             border-radius: 8px;
-            background: rgba(239, 99, 55, 0.03);
+            background: rgba(var(--terracotta-rgb), 0.03);
             text-align: center;
         }
 
         .cta h3 {
-            color: #E48E68;
+            color: var(--terracotta);
             margin-bottom: 0.5rem;
         }
 
@@ -110,8 +127,8 @@
             display: inline-block;
             margin-top: 1rem;
             padding: 0.8rem 2rem;
-            background-color: #E48E68;
-            color: #000000;
+            background-color: var(--terracotta);
+            color: var(--charcoal);
             text-decoration: none;
             border-radius: 6px;
             font-weight: 600;
@@ -119,8 +136,8 @@
         }
 
         .btn:hover {
-            background-color: #A3492F;
-            color: #F0F2F6;
+            background-color: var(--sienna);
+            color: var(--ivory);
             transform: translateY(-2px);
         }
     </style>
@@ -137,17 +154,19 @@
         <p class="subtitle">An AI support agent that remembers every customer's full history — without sending it to the cloud.</p>
 
         <h2>The Problem</h2>
-        <ul class="feature-list">
-        <li>Customer support AI is trapped in a paradox. It needs deep customer history to be useful — past tickets, preferences, escalations, what went wrong last time. But putting that data on a third-party cloud creates privacy risk, compliance headaches, and vendor lock-in. So most teams choose: useful but exposed, or safe but starting from scratch every time.</li>
+        <p>Customer support AI is trapped in a paradox. It needs deep customer history to be useful — past tickets, preferences, escalations, what went wrong last time. But putting that data on a third-party cloud creates privacy risk, compliance headaches, and vendor lock-in. So most teams choose: useful but exposed, or safe but starting from scratch every time.</p>
 
-        <h2>What Your Parnter Does Differently:</h2>
+        <h2>What Your Partner Does Differently</h2>
         <ul class="feature-list">
-        <li>Remembers every customer's full interaction history — locally → Pulls in past tickets, resolutions, and context the moment a conversation starts → Knows which customers have had repeated issues and prioritizes accordingly → Searches past solutions by meaning — not just ticket numbers → Zero cloud dependency means compliance is your problem to solve, not theirs</li>
+            <li>Remembers every customer's full interaction history — locally</li>
+            <li>Pulls in past tickets, resolutions, and context the moment a conversation starts</li>
+            <li>Knows which customers have had repeated issues and prioritizes accordingly</li>
+            <li>Searches past solutions by meaning — not just ticket numbers</li>
+            <li>Zero cloud dependency means compliance is your problem to solve, not theirs</li>
         </ul>
 
         <h2>How It Works</h2>
-        <ul class="feature-list">
-        <li>Your Partner's hybrid memory system combines keyword matching with semantic similarity. When a customer says "this thing keeps breaking," it doesn't need the exact error code — it searches by meaning and finds the related history. Memory importance scoring surfaces frequent or high-impact issues automatically. Everything runs on your infrastructure. No API calls to a third party holding your customer data hostage.</li>
+        <p>Your partner's hybrid memory system combines keyword matching with semantic similarity. When a customer says "this thing keeps breaking," it doesn't need the exact error code — it searches by meaning and finds the related history. Memory importance scoring surfaces frequent or high-impact issues automatically. Everything runs on your infrastructure. No API calls to a third party holding your customer data hostage.</p>
 
         <div class="cta">
             <h3>This is just one configuration.</h3>
