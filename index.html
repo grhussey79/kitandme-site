@@ -391,6 +391,36 @@
                 display: none;
             }
         }
+
+                        /* ===== Ivory theme ===== */
+        body {
+            background-color: var(--ivory);
+            color: var(--charcoal);
+        }
+
+        /* Titles in the boxes and section headings: charcoal */
+        .feature-block h3,
+        .feature-item h4,
+        .problem-card h3,
+        .use-case h3,
+        .hero p {
+            color: var(--charcoal);
+        }
+
+        /* Small accent text: darker sienna so it's readable on ivory */
+        .tag,
+        .use-case .learn-more,
+        .privacy .promise,
+        footer a,
+        .hero h1 .accent,
+        .section h2 .accent,
+        .privacy h2 span {
+            color: var(--sienna) !important;
+        }
+
+        .tag {
+            border-color: var(--sienna);
+        }
     </style>
 </head>
 <body>
