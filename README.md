@@ -1,1 +1,1 @@
-# kitandme.co-site
+# Strixen.co-site
